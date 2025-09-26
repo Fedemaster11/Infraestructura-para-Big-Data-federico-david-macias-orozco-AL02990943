@@ -1,0 +1,8 @@
+﻿.venv/
+.env
+keys.py
+__pycache__/
+.ipynb_checkpoints/
+data/
+*.csv
+*.json
