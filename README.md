@@ -1,4 +1,4 @@
-﻿Actividad 6.1 – OpenWeather (Berlín)
+﻿Actividad 6.1 y 7.1 – OpenWeather (Berlín) - Flight dtata frfankfurt
 Al02990943
 Federico david Macias Orozco
 Infraestructura para Big Data
