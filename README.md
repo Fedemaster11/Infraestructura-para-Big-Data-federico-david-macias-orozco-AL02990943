@@ -1,4 +1,4 @@
-﻿Actividad 6.1 y 7.1 – OpenWeather (Berlín) - Flight dtata frfankfurt
+﻿Actividad 6.1 , 7.1 ,  9 – OpenWeather (Berlín) - Flight dtata frfankfurt  MYsql
 Al02990943
 Federico david Macias Orozco
 Infraestructura para Big Data
@@ -8,3 +8,6 @@ En esta actividad generamos nuestra API key de OpenWeather, la guardamos de form
 
 Actividad 7 Frankfurt
 Para la actividad 7 recopilamos llegadas del aeropuerto de Fráncfort (FRA) usando AeroDataBox (RapidAPI). Consultamos el FIDS por rangos de 6 h (08:00–14:00 y 14:00–20:00 hora local) para cumplir el límite de la API (≤12 h), normalizamos el JSON con pandas.json_normalize, extraímos scheduled_arrival_utc y scheduled_arrival_frankfurt, junto con flight_number, aeropuerto de origen, aerolínea y modelo de aeronave; luego convertimos a datetime, filtramos filas sin hora y deduplicamos por (scheduled_arrival_utc, flight_number). Finalmente guardamos en data/flights/frankfurt_arrivals_tomorrow_divided.csv (UTF-8 con BOM para mostrar acentos correctamente en Excel).
+
+Actividad 9 MySQL:
+Esta actividad se centró en la implementación de la lógica ETL (Extracción, Transformación y Carga) para migrar los DataFrames recopilados en sesiones anteriores directamente a una infraestructura de base de datos MySQL. Inicialmente, se creó el esquema gans con sus cuatro tablas (city_pop, airport, weather_data y flight_arrival). Utilizando Python y la librería SQLAlchemy, se implementó la inserción de la información de la ciudad (Berlín, DE) y se adaptaron los scripts de recolección de OpenWeatherMap y AeroDataBox. El proceso culminó con la ejecución exitosa de los scripts, incluyendo la corrección crítica de la inconsistencia de columnas que requirió renombrar flight_number a flight_icao en el DataFrame antes de cargar los datos de vuelos, asegurando que tanto los datos climáticos como los 234 registros de llegadas de vuelos se insertaran correctamente en sus respectivas tablas. Finalmente, se verificó la migración completa mediante consultas SELECT * en MySQL Workbench.
